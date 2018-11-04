@@ -1,15 +1,15 @@
 /* signrequestwtemplatevemail.js
  *
- * Simple script that demonstrates how to accomplish REST API use-cases.*/
+ * Script that demonstrates use-cases of DocuSign REST API.*/
 
 var docusign = require("docusign-esign");
 
-// NOTE: Values are class members for readability and easy testing
-// TODO: Enter your DocuSign credentials
+// NOTE: Values are class members for readability/testing
+// TODO: Enter DocuSign credentials
 const UserName = "[EMAIL]";
 const Password = "[PASSWORD]";
 
-// TODO: Enter your Integrator Key (aka API key), created through your developer sandbox preferences
+// TODO: Enter Integrator Key (API key), created through your developer sandbox preferences
 const IntegratorKey = "da04b099-4588-42d7-b5cd-5620f9baf819";
 
 // for production environment update to 'www.docusign.net/restapi'
@@ -22,14 +22,14 @@ const BaseUrl = "https://demo.docusign.net/restapi";
  * Login API call then the Create Envelope API call.
  ******************************************************************************************************************/
 var RequestSignatureOnDocument = function() {
-  // TODO: Enter signer information and path to a test file
+  // TODO: Enter signer information and path to test file
   const signerName = "[SIGNER_NAME]";
   const signerEmail = "[SIGNER_EMAIL]";
 
   // point to a local document for testing
   const SignTest1File = "[PATH/TO/Desktop/SampleDocument.pdf]";
 
-  // initialize the api client
+  // initialize the API client
   var apiClient = new docusign.ApiClient();
   apiClient.setBasePath(BaseUrl);
 
@@ -65,7 +65,7 @@ var RequestSignatureOnDocument = function() {
 
     if (loginInfo) {
       // list of user account(s)
-      // NOTE: a given user may be a member of multiple accounts
+      // NOTE: any user may be a member of multiple accounts
       var loginAccounts = loginInfo.getLoginAccounts();
       console.log("LoginInformation: " + JSON.stringify(loginAccounts));
 
@@ -73,7 +73,7 @@ var RequestSignatureOnDocument = function() {
       // Step 2:  Create Envelope API (AKA Signature Request)
       // ===============================================================================
 
-      // create a byte array that will hold document bytes
+      // create an array that will hold document bytes
       var fileBytes = null;
       try {
         var fs = require("fs");
