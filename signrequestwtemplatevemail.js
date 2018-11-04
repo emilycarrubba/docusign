@@ -1,6 +1,6 @@
 /* signrequestwtemplatevemail.js
  *
- * Script that demonstrates use-cases of DocuSign REST API.*/
+ * Script that demonstrates use-cases of DocuSign REST API(s).*/
 
 var docusign = require("docusign-esign");
 
