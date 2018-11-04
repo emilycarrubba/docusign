@@ -18,8 +18,7 @@ const BaseUrl = "https://demo.docusign.net/restapi";
 /*****************************************************************************************************************
  * RequestSignatureOnDocument()
  *
- * This script demonstrates requesting a signature on a document by first making the
- * Login API call then the Create Envelope API call.
+ * This script demonstrates requesting a signature on a document making the Login API call then the Create Envelope API call.
  ******************************************************************************************************************/
 var RequestSignatureOnDocument = function() {
   // TODO: Enter signer information and path to test file
