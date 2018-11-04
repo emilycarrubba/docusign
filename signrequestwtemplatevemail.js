@@ -102,7 +102,7 @@ var RequestSignatureOnDocument = function() {
       docs.push(doc);
       envDef.setDocuments(docs);
 
-      // add a recipient to sign the document, identified by name and email we used above
+      // add a recipient to sign the document, identified by name and email -- (details above)
       var signer = new docusign.Signer();
       signer.setEmail(signerEmail);
       signer.setName(signerName);
