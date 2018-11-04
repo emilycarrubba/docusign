@@ -9,7 +9,7 @@ var docusign = require("docusign-esign");
 const UserName = "[EMAIL]";
 const Password = "[PASSWORD]";
 
-// TODO: Enter Integrator Key (API key), created through your developer sandbox see "Helpful Links" for details.
+// TODO: Enter Integrator Key (API key), created through developer sandbox see "Helpful Links" for details.
 const IntegratorKey = "da04b099-4588-42d7-b5cd-5620f9baf819";
 
 // for production environment update to 'www.docusign.net/restapi'
@@ -69,7 +69,7 @@ var RequestSignatureOnDocument = function() {
       console.log("LoginInformation: " + JSON.stringify(loginAccounts));
 
       // ===============================================================================
-      // Step 2:  Create Envelope API (AKA Signature Request)
+      // Step 2:  Create Envelope API (Signature Request)
       // ===============================================================================
 
       // create an array that will hold document bytes
