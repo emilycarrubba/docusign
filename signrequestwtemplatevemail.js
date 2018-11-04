@@ -9,7 +9,7 @@ var docusign = require("docusign-esign");
 const UserName = "[EMAIL]";
 const Password = "[PASSWORD]";
 
-// TODO: Enter Integrator Key (API key), created through your developer sandbox preferences
+// TODO: Enter Integrator Key (API key), created through your developer sandbox see "Helpful Links" for details.
 const IntegratorKey = "da04b099-4588-42d7-b5cd-5620f9baf819";
 
 // for production environment update to 'www.docusign.net/restapi'
@@ -44,13 +44,13 @@ var RequestSignatureOnDocument = function() {
     '"}';
   apiClient.addDefaultHeader("X-DocuSign-Authentication", creds);
 
-  // assign api client to the Configuration object
+  // assign api client to the Configuration Object
   docusign.Configuration.default.setDefaultApiClient(apiClient);
 
   // ===============================================================================
   // Step 1:  Login() API
   // ===============================================================================
-  // login call available off the AuthenticationApi
+  // login call available from the AuthenticationApi
   var authApi = new docusign.AuthenticationApi();
 
   // optional login parameters to be set
@@ -109,7 +109,7 @@ var RequestSignatureOnDocument = function() {
       signer.setRecipientId("1");
 
       // create a signHere tab on the document for the signer to sign
-      // default unit of measurement is pixels, can also be mms, cms, inches also
+      // default unit of measurement is pixels -- can also be mms, cms, inches.
       var signHere = new docusign.SignHere();
       signHere.setDocumentId("1");
       signHere.setPageNumber("1");
@@ -117,7 +117,7 @@ var RequestSignatureOnDocument = function() {
       signHere.setXPosition("100");
       signHere.setYPosition("100");
 
-      // can have multiple tabs, envelope will need to be added as a single element list
+      // can have multiple tabs -- envelope will need to be added as a single element list
       var signHereTabs = [];
       signHereTabs.push(signHere);
       var tabs = new docusign.Tabs();
@@ -135,12 +135,12 @@ var RequestSignatureOnDocument = function() {
       // send the envelope by setting |status| to "sent". To save as a draft set to "created"
       envDef.setStatus("sent");
 
-      // use the |accountId| we retrieved through the Login API to create the Envelope
+      // use the |accountId| retrieved through the Login API to create the Envelope
       var loginAccount = new docusign.LoginAccount();
       loginAccount = loginAccounts[0];
       var accountId = loginAccount.accountId;
 
-      // instantiate a new EnvelopesApi object
+      // initantiate a new EnvelopesApi object
       var envelopesApi = new docusign.EnvelopesApi();
 
       // call the createEnvelope() API
